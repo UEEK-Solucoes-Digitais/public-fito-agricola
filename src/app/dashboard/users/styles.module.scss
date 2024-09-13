@@ -1,0 +1,37 @@
+.addUserForm {
+    margin-top: 40px;
+
+    .formGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+
+        @media(max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    span {
+        display: block;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $lightGrayColor;
+        margin-top: 22px;
+    }
+}
+
+.childrenWrapper {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    // max-height: 650px;
+}

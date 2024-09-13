@@ -1,0 +1,8 @@
+next.config.js
+node_modules
+public
+.next
+.vscode
+
+# (admin)
+# admin

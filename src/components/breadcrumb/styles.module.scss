@@ -1,0 +1,57 @@
+.breadCrumb {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+
+    @media (max-width: 1200px) {
+        align-items: flex-start;
+
+        .path {
+            flex-wrap: wrap;
+        }
+
+        & > svg {
+            font-size: 18px;
+        }
+    }
+
+    & > svg {
+        color: $accentColor;
+        font-size: 22px;
+    }
+
+    .path {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .local:not(:last-child) a:after {
+            color: $darkColor;
+            content: '/';
+            padding-left: 10px;
+            text-decoration: none;
+        }
+
+        a {
+            cursor: pointer;
+            color: $darkColor;
+            font-size: 20px;
+            position: relative;
+            text-decoration: underline;
+            @include soft-transition;
+            @include cut-lines;
+
+            @media (max-width: 1200px) {
+                font-size: 1rem;
+            }
+
+            &:hover {
+                color: $accentColor;
+            }
+        }
+    }
+}

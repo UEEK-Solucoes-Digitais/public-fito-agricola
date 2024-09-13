@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.fito_agricola.twa",
+        "sha256_cert_fingerprints": ["C2:3F:7B:5E:48:C1:7A:63:F3:5B:9B:A2:4A:9A:A1:BD:78:0E:8E:59:94:7F:4E:D5:CD:A7:AC:96:41:EB:CE:4E"]
+      }
+    }]

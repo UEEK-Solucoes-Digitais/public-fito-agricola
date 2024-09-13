@@ -1,0 +1,45 @@
+.playbackContainer {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+
+    .playbackBar {
+        background-color: #6d6d6eb3;
+        height: 4px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        @include soft-transition($time: 0.3s);
+
+        &:hover {
+            height: 10px;
+        }
+
+        .progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: $accentColor;
+            @include soft-transition($time: 0.5s);
+        }
+    }
+
+    .timer {
+        display: flex;
+        flex-shrink: 0;
+        gap: 3px;
+        white-space: nowrap;
+        font-size: .875rem;
+        color: #fff;
+        font-weight: 400;
+
+        span {
+            display: block;
+            font-size: .875rem;
+            color: #fff;
+            font-weight: 400;
+        }
+    }
+}

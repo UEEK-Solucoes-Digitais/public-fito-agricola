@@ -1,0 +1,75 @@
+.fileInputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: #152536;
+    font-size: 1rem;
+    font-weight: bold;
+
+    span {
+        font-size: .8rem;
+        color: #8ABB6E;
+        font-weight: bold;
+    }
+
+    padding: 10px 20px;
+    border: 1px dashed #DEE2E6;
+    border-radius: 20px;
+    width: fit-content;
+    min-width: 350px;
+
+    &[data-disabled="true"] {
+        opacity: .8;
+        pointer-events: none;
+
+        span,
+        input {
+            pointer-events: none;
+        }
+    }
+}
+
+.fileItem {
+    color: #152536;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #DEE2E6;
+    border-radius: 20px;
+    width: fit-content;
+
+    &[data-disabled="true"] {
+        opacity: .8;
+        pointer-events: none;
+
+        span,
+        input {
+            pointer-events: none;
+        }
+    }
+
+    .view {
+        cursor: pointer;
+        color: #8ABA6E;
+        font-size: 24px;
+        margin-left: 20px;
+    }
+
+    .delete {
+        all: unset;
+        cursor: pointer;
+        color: #CC6363;
+        font-size: 24px;
+        margin-left: 10px;
+    }
+}
+
+.infoItem {
+    margin: 15px 0;
+
+    p {
+        font-weight: normal !important;
+        margin-bottom: 5px !important;
+    }
+}

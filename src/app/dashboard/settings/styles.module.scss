@@ -1,0 +1,150 @@
+.settingsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (min-width: 1200px) {
+        grid-template-columns: 30% auto;
+    }
+
+    .box {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 80px rgba(0, 0, 0, 0.06);
+    }
+
+    .linkList {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 20px;
+
+        .linkItem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            background: none;
+            color: $blackColor;
+            font-size: 1rem;
+            font-weight: 400;
+            @include soft-transition;
+
+            &:hover {
+                padding-left: 5px;
+            }
+
+            &.active {
+                color: $accentColor;
+                font-weight: bold;
+            }
+
+            svg {
+                color: $accentColor;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    svg {
+        color: $accentColor;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.riskGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+
+    p {
+        font-size: 1rem;
+        color: $blackColor;
+    }
+}
+
+.radioGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.radioItemOption {
+    position: relative;
+
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 2;
+
+        &:checked,
+        &:hover {
+            &+label {
+                opacity: 1;
+            }
+        }
+
+        &:checked+label {
+            font-weight: bold;
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    label {
+        border-radius: 10px;
+        display: block;
+        color: $blackColor;
+        opacity: 0.3;
+        position: relative;
+        z-index: 1;
+        padding-left: 25px;
+        @include soft-transition;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid $accentColor;
+            transition: all 0.3s;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $accentColor;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+    }
+}

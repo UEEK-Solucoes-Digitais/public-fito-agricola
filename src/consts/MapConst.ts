@@ -1,0 +1,4 @@
+export enum MapConst {
+    DEFAULT_LATITUDE = -27.827097,
+    DEFAULT_LONGITUDE = -50.33408,
+}

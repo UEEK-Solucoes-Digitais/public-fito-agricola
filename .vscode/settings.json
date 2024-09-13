@@ -1,0 +1,5 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "biome.enabled": false
+}

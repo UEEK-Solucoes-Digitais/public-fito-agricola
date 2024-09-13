@@ -1,0 +1,121 @@
+.exportPage {
+    height: auto;
+    background: #fff;
+    // min-height: 80dvh;
+    width: 719px;
+}
+
+.flexContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tableContent {
+    width: 100%;
+    border-collapse: separate;
+    overflow: hidden;
+
+    .bodyContent {
+        margin: 30px 0;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+    }
+
+    .logo {
+        height: 50px !important;
+    }
+
+
+    .flexContent {
+        justify-content: space-between;
+    }
+
+    .reportDetails {
+        border-top: 1px dashed #C0C0C0;
+        border-bottom: 1px dashed #C0C0C0;
+        display: flex;
+        gap: 20px 60px;
+        padding: 25px 0;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+
+        .reportDetailsItem {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .header {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.5rem;
+                color: $darkGreenColor;
+
+                svg {
+                    color: $accentColor;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .content p {
+                color: $darkColor;
+                font-size: 1.5rem;
+                font-weight: 300;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.chartWrap {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #C0C0C0;
+
+    &:not(.first) {
+        break-inside: avoid;
+        page-break-before: always;
+        padding-top: 40px;
+    }
+
+    &>h3 {
+        margin-bottom: 20px;
+    }
+}
+
+
+.chartExport {
+    height: 100%;
+    background: #fff;
+
+    &.exportCulture {
+        background: transparent;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.colorWrapper {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+
+    span,
+    div {
+        border-radius: 999px;
+        min-width: 14px !important;
+        width: 14px !important;
+        height: 14px;
+        color: transparent;
+    }
+
+
+}

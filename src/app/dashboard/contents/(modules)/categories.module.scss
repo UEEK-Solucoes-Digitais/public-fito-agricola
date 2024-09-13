@@ -1,0 +1,135 @@
+.categoryWrapper {
+    margin-bottom: 50px;
+    width: calc(100% + 100px);
+    margin-left: -50px;
+    padding-bottom: 40px;
+
+    // .swiperNavPrev {
+    //     left: unset;
+    //     right: 0;
+    //     top: unset;
+    //     bottom: 0;
+    // }
+    :global(.swiper-slide) {
+        flex-shrink: unset;
+        height: auto;
+        width: fit-content;
+    }
+
+    :global(.swiper) {
+        padding-left: 50px;
+        padding-right: 50px;
+
+        --swiper-theme-color: #fff !important;
+        --swiper-navigation-size: 32px !important;
+        --swiper-navigation-sides-offset: 14px !important;
+    }
+
+    .categoryItem {
+        background-color: #373737;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 400;
+        height: 100%;
+        line-height: 100%;
+        padding: 16px;
+        position: relative;
+        text-align: center;
+        white-space: nowrap;
+        @include soft-transition;
+        @include cut-lines;
+
+        &.active {
+            font-weight: 600;
+
+            &:hover {
+                background-color: darken(#373737, 10%);
+            }
+        }
+
+        &.addCategory {
+            border-color: #373737;
+            font-weight: 600;
+        }
+
+        &:not(.addCategory) {
+            min-width: 150px;
+        }
+
+        &:hover,
+        &.active {
+            background-color: #373737;
+            color: #FFF;
+        }
+
+        &:hover {
+            .editCategory {
+                visibility: visible;
+                width: 35px;
+            }
+
+            .deleteCategory {
+                visibility: visible;
+                width: 35px;
+            }
+        }
+
+        .dynamicCategory {
+            align-items: center;
+            background-color: #FFF;
+            box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.10);
+            cursor: pointer;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            width: 0;
+            z-index: 1;
+            @include soft-transition($time: 0.4s);
+
+            &:hover {
+                border-radius: 10px;
+                width: 100%;
+                z-index: 2;
+            }
+        }
+
+        .editCategory {
+            border-radius: 20px 0 0 20px;
+            right: 0;
+
+            :global(.iconify) {
+                color: #373737;
+            }
+
+            &:active {
+                background-color: #e0e0e0;
+            }
+        }
+
+        .deleteCategory {
+            border-radius: 0 20px 20px 0;
+            left: 0;
+
+            :global(.iconify) {
+                color: $redColor;
+            }
+
+            &:hover {
+                background-color: $redColor;
+
+                :global(.iconify) {
+                    color: #FFF;
+                }
+            }
+
+            &:active {
+                background-color: darken($redColor, 10%);
+            }
+        }
+    }
+}

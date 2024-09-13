@@ -1,0 +1,24 @@
+{
+    "states": {
+        "0": "Chuquisaca",
+        "1": "La Paz",
+        "2": "Cochabamba",
+        "3": "Oruro",
+        "4": "Potosí",
+        "5": "Tarija",
+        "6": "Santa Cruz",
+        "7": "Beni",
+        "8": "Pando"
+    },
+    "initials": {
+        "0": "CHU",
+        "1": "LPZ",
+        "2": "CBB",
+        "3": "ORU",
+        "4": "PTS",
+        "5": "TJA",
+        "6": "SCZ",
+        "7": "BEN",
+        "8": "PAN"
+    }
+}

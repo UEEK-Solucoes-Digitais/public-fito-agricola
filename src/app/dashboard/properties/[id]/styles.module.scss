@@ -1,0 +1,417 @@
+.boxHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .headerButtons {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: 12px;
+    }
+
+    @media(max-width: 768px) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+
+        .headerButtons {
+            flex-wrap: wrap;
+            margin-left: 0;
+
+            &.mobileHeader {
+                display: none;
+            }
+        }
+    }
+}
+
+.boxContentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0px;
+
+    .customTableActions {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+}
+
+.minBoxHeight {
+    min-height: 67dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentAction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.modalDivider {
+    background: $lightGrayColor;
+    width: 100%;
+    height: 1px;
+    margin-top: 40px;
+}
+
+.modalActions {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cropsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .divider {
+        height: 1px;
+        background: $gray300;
+        width: 100%;
+        margin: 30px 0px;
+    }
+
+    .cropsHeader {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+
+            @media(max-width: 1200px) {
+                font-size: 12px;
+                white-space: nowrap;
+            }
+        }
+
+        .searchMobileWrapper {
+            display: none;
+        }
+
+        .cropsAction {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+
+            &.mobile {
+                display: none;
+            }
+
+
+            @media(max-width: 1200px) {
+                &.mobile {
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+
+                    button {
+                        min-width: 20px;
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                &.desktop {
+                    display: none;
+                }
+            }
+        }
+
+        @media(max-width: 1200px) {
+            flex-wrap: wrap;
+
+            .searchMobileWrapper {
+                display: block;
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                @include soft-transition;
+
+                &.open {
+                    height: 40px;
+                }
+            }
+        }
+    }
+}
+
+.selectorGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+
+
+
+    button {
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 45px 45px 20px;
+        cursor: pointer;
+        @include soft-transition;
+
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+
+        span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $darkColor;
+        }
+
+        svg {
+            font-size: 3rem;
+            color: $accentColor;
+        }
+
+        &:hover {
+            background: $accentColor;
+
+            span,
+            svg,
+            svg path {
+                color: #FFF;
+                stroke: #FFF;
+
+                &.applyFill {
+                    fill: #FFF;
+                    fill-opacity: 1;
+                }
+
+            }
+        }
+
+    }
+
+    @media(max-width: 1200px) {
+        grid-template-columns: repeat(1, 1fr);
+
+        button {
+            padding: 20px;
+            gap: 10px;
+
+            svg {
+                font-size: 2rem;
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+    }
+}
+
+.activityWrapper {
+
+    span {
+        margin-top: 40px;
+        color: $darkColor;
+        font-size: 0.9rem;
+        font-weight: normal;
+        display: block;
+
+        &.marginBottom {
+            margin-bottom: 20px;
+        }
+    }
+
+    .lessPadding {
+        padding: 4px 0px;
+    }
+
+    .plantFormGrid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px 10px;
+
+        @media(max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .fertilizerFormGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 10px;
+
+        @media(max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .applicationFormGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px 10px;
+
+        @media(max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .harvestFormGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 10px;
+
+        @media(max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .activityActions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+
+        @media(max-width: 1200px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}
+
+.filterOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.flexItem {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @media(max-width: 1200px) {
+        flex-direction: column;
+        border: 1px solid $grayColor;
+        padding: 15px;
+        gap: 15px;
+        border-radius: 10px;
+        position: relative;
+
+        div {
+            width: 100%;
+        }
+
+        button {
+            position: absolute !important;
+            top: 10px !important;
+            right: 20px !important;
+            height: 30px;
+            width: 30px;
+            font-size: 16px;
+        }
+    }
+}
+
+.filterOptionItem {
+    display: flex;
+    height: fit-content;
+    gap: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid #999999;
+    padding: 10px 0px;
+    min-width: 200px;
+
+    button {
+        cursor: pointer;
+    }
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    input {
+        max-width: 130px !important;
+    }
+}
+
+.notIterable {
+    pointer-events: none !important;
+}
+
+.deleteButton {
+    background: $redColor;
+    color: #FFF;
+    border: none;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    height: 40px;
+    width: 40px;
+    @include soft-transition;
+
+    &:hover {
+        background: darken($redColor, 10%);
+    }
+}
+
+.subharvestItem {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    @media(max-width: 1200px) {
+        flex-direction: column;
+        border: 1px solid $grayColor;
+        padding: 15px;
+        border-radius: 10px;
+        position: relative;
+
+        button {
+            position: absolute !important;
+            top: 10px !important;
+            right: 20px !important;
+        }
+    }
+
+    .fullWidth{
+        width: 100%;
+    }
+    
+}
+
+.mobileActionsModal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    button {
+        width: 100%;
+        justify-content: center;
+    }
+}

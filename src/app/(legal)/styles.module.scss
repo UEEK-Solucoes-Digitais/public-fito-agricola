@@ -1,0 +1,156 @@
+.header {
+    padding: 25px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $gray300;
+}
+
+.footer {
+    padding: 25px 0;
+    margin-top: 40px;
+    border-top: 1px solid $gray300;
+
+    p {
+        text-align: center;
+        font-weight: bold;
+        color: $blackColor;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        p {
+            text-align: right;
+        }
+    }
+}
+
+.container {
+    max-width: 95%;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        max-width: 70%;
+    }
+
+    img {
+        max-height: 50px;
+    }
+}
+
+.textWrap {
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: $darkGreenColor;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: $accentColor;
+    }
+
+    h3 {
+        color: $accentColor;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: $blackColor;
+
+        span {
+            color: $accentColor;
+            font-size: inherit;
+        }
+    }
+
+    a {
+        font-size: inherit;
+        color: $darkGreenColor;
+        text-decoration: none;
+        font-weight: 700;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    ol,
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        li {
+            position: relative;
+            padding-left: 40px;
+            font-size: 1rem;
+            color: $blackColor;
+        }
+    }
+
+    i {
+        font-style: italic;
+    }
+
+    ol {
+        counter-reset: item;
+
+        li {
+            counter-increment: item;
+
+            &:before {
+                // conteudo deve ser o número da lista
+                content: counter(item);
+                position: absolute;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: $accentColor;
+            }
+        }
+    }
+}
+
+.scrollDiv {
+    height: 100dvh;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #e2e2e2;
+        border-radius: 30px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $accentColor;
+        border-radius: 30px;
+    }
+}

@@ -1,0 +1,22 @@
+.wrapper {
+    padding-bottom: 20px;
+}
+
+.addRegister {
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+.contentFlex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &>div {
+        width: fit-content !important;
+    }
+
+    input {
+        width: 44px !important;
+    }
+}

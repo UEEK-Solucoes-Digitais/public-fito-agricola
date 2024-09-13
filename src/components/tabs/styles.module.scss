@@ -1,0 +1,193 @@
+.tabs {
+    border-bottom: 1px solid $lightGrayColor;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 45px;
+    width: 100%;
+
+
+    :global(.swiper-slide) {
+        flex-shrink: unset !important;
+        height: auto !important;
+        width: fit-content !important;
+    }
+
+    &.geralButtonTab {
+        border: none;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    &.noBorder {
+        margin-bottom: 0;
+    }
+
+    .tab {
+        cursor: pointer;
+        background: none;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        color: $grayColor;
+        padding-bottom: 25px;
+        position: relative;
+        @include soft-transition;
+
+        .iconTop {
+            right: -15px;
+            position: absolute;
+            pointer-events: none;
+            top: -8px;
+            touch-action: none;
+
+            &[data-loading="true"] {
+                top: -12px;
+
+                :global(.iconify) {
+                    font-size: 1rem;
+                }
+            }
+
+            &[data-error="true"] {
+                top: -15px;
+
+                :global(.iconify) {
+                    color: $redColor;
+                }
+            }
+
+            :global(.iconify) {
+                color: $accentColor;
+            }
+        }
+
+        svg {
+            color: $gray300;
+            font-size: 1.375rem;
+        }
+
+        &:after {
+            bottom: 0;
+            background: $accentColor;
+            content: '';
+            left: 0;
+            height: 0;
+            position: absolute;
+            width: 100%;
+            @include soft-transition;
+        }
+
+        &:hover,
+        &.active {
+            color: $darkColor;
+
+            svg {
+                color: $accentColor;
+            }
+
+            &:after {
+                height: 2px;
+            }
+        }
+
+        &.active {
+            font-weight: 700;
+        }
+    }
+
+    .geralButton {
+
+        &:hover,
+        &.active {
+            background: $darkGreenColor;
+            color: #fff;
+            border-color: $darkGreenColor;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        margin-bottom: 25px;
+
+        .tab {
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 400px) {
+
+        .tab {
+            font-size: 14px;
+        }
+    }
+}
+
+.dropdownTab {
+    height: 45px;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+
+    .dropdownWrapper {
+        background: #fff;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .selectedTab {
+
+        position: relative;
+        z-index: 2;
+    }
+
+    .tab {
+        display: flex;
+        align-items: center;
+        color: $darkGreenColor;
+        font-size: 14px;
+        gap: 10px;
+        padding: 14px 20px;
+        width: 100%;
+        position: relative;
+        @include soft-transition;
+
+        svg {
+            color: $accentColor;
+            height: 14px;
+            width: 14px;
+        }
+
+        .iconDown {
+            margin-left: auto;
+        }
+
+
+        &.active {
+            background: $darkGreenColor;
+            color: #fff;
+
+            svg {
+                color: #fff;
+            }
+        }
+    }
+
+    .dropdownLinks {
+        border-top: 1px solid transparent;
+        overflow: hidden;
+        max-height: 250px;
+        overflow: auto;
+        width: 100%;
+        @include soft-transition;
+    }
+
+    &:not(.open) {
+        .dropdownLinks {
+            height: 0px !important;
+        }
+    }
+}

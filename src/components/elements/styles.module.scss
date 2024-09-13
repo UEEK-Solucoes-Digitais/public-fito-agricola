@@ -1,0 +1,90 @@
+.fancyboxItem {
+    width: fit-content !important;
+}
+
+.levelItemWrap {
+    position: relative;
+    width: fit-content !important;
+
+    .absoluteItems {
+        display: flex;
+        gap: 3px;
+        position: absolute;
+        justify-content: flex-end;
+        right: -15px;
+        top: -15px;
+        z-index: 10;
+    }
+
+    &>div {
+        width: fit-content;
+    }
+
+    .levelItemText {
+        background: $yellowColor;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25px;
+        min-width: 25px !important;
+        border-radius: 999px;
+        width: fit-content;
+
+        svg {
+            color: #fff !important;
+            font-size: 16px;
+        }
+    }
+
+    .levelItemImage {
+        background: $darkGreenColor;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25px;
+        min-width: 25px !important;
+        border-radius: 999px;
+        width: fit-content;
+
+        svg {
+            color: #fff !important;
+            font-size: 16px;
+        }
+    }
+}
+
+.levelItem {
+    align-items: center;
+    background-color: $blackColor;
+    border-radius: 10px;
+    display: block !important;
+    line-break: normal !important;
+    color: #FFF;
+    display: inline-flex;
+    font-family: $fontFamilyUbuntu;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 100%;
+    justify-content: center;
+    padding: 8px 10px;
+    width: fit-content;
+    text-align: left;
+
+    &[data-color="red"] {
+        background-color: $redColor;
+    }
+
+    &[data-color="yellow"] {
+        background-color: $yellowColor;
+    }
+
+    &[data-color="green"] {
+        background-color: $accentColor;
+    }
+
+    &.darker {
+        background-color: $darkGreenColor !important;
+    }
+}

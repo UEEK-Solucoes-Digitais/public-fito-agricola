@@ -1,0 +1,318 @@
+.wrapper {
+
+    width: 100%;
+
+    :global(p),
+    :global(input),
+    :global(textarea),
+    :global(select),
+    :global(h3),
+    :global(label) {
+        color: #FFF !important;
+    }
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    :global(option) {
+        color: #000 !important;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 70% auto;
+        gap: 40px;
+    }
+
+    .formGroup {
+        background: #373737;
+        border-radius: 10px;
+        box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.10);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        &:last-child {
+            gap: 30px;
+            padding: 30px 20px;
+        }
+    }
+
+    .geralGroup {
+        display: flex;
+        // align-items: center;
+        gap: 40px;
+
+        &>div {
+            width: 100%;
+        }
+    }
+
+    .group {
+        display: flex;
+        gap: 70px;
+        width: 100%;
+
+        &>div {
+            width: 100%;
+        }
+
+        &:first-child {
+            &>div:last-of-type {
+                width: 30%;
+            }
+        }
+    }
+
+    .videoList {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .videoItem {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        position: relative;
+
+        .videoDetails {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+        }
+    }
+
+    .imageGroup {
+        align-items: center;
+        display: flex;
+        height: 215px;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 380px;
+
+        &.course {
+            height: 560px;
+            width: 320px;
+        }
+
+        &.mostWatched {
+            height: 320px;
+            width: 195px;
+        }
+
+        &.loading {
+            @include skeleton-infinite;
+        }
+
+        img {
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .imagePreview {
+            align-items: center;
+            border: 1px solid $grayColor;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+
+
+
+            :global(.iconify) {
+                color: $accentColor;
+                font-size: 32px;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+            }
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            &:before {
+                background-color: #0000002d;
+                content: '';
+                height: 100%;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                visibility: hidden;
+                width: 100%;
+                z-index: 1;
+                @include soft-transition;
+            }
+        }
+    }
+
+    .addForm {
+        border-top: 1px solid $grayColor;
+        margin: 50px 0;
+        position: relative;
+        width: 100%;
+
+        .inputs {
+            align-items: center;
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+
+            &>div:first-of-type {
+                width: 100%;
+
+                label,
+                select,
+                input,
+                svg {
+                    color: #FFF !important;
+                    border-color: #FFF !important;
+                }
+
+                option {
+                    color: #000 !important;
+                }
+            }
+        }
+
+        &:before {
+            background-color: $darkGreenColor;
+            content: '';
+            height: 150px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 130%;
+        }
+    }
+
+    .newGroups {
+        width: 100%;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 20px;
+
+        form {
+            gap: 20px;
+        }
+
+        .group {
+            flex-direction: column;
+            gap: 20px;
+
+            &>div {
+                width: 100% !important;
+            }
+        }
+
+        .imageGroup {
+            height: 200px;
+            width: 100%;
+        }
+
+        .addForm {
+            margin: 30px 0;
+
+            &:before {
+                height: 190px;
+            }
+
+            .inputs {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+    }
+}
+
+.draggableItem {
+    border: 1px solid #ccc;
+    // cursor: grab;
+    padding: 12px 15px;
+    background-color: #575757;
+    position: relative;
+
+    &:not(:last-of-type) {
+        margin-bottom: 25px;
+    }
+
+    .removeTopic {
+        align-items: center;
+        background-color: $redColor;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        height: 45px;
+        justify-content: center;
+        right: -20px;
+        position: absolute;
+        top: -20px;
+        width: 45px;
+        z-index: 1;
+        @include soft-transition;
+
+        :global(.iconify) {
+            color: #FFF;
+            font-size: 1.25rem;
+            transform: none !important;
+        }
+
+        &:hover {
+            background-color: $blackColor;
+            transform: translateY(-3px);
+        }
+    }
+}
+
+.buttons {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+    }
+}
+
+.imageGroupInput {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    label {
+        color: $blackColor;
+        font-weight: 500;
+    }
+
+    @media(max-width: 1200px) {
+        label {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+
+    .backButton {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 40px;
+
+        .icon {
+            color: $accentColor;
+            font-size: 22px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        width: 100%;
+
+        .title {
+            margin-bottom: 20px;
+        }
+    }
+}

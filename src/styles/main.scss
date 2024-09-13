@@ -1,0 +1,76 @@
+@import './variables.scss';
+@import './reset.scss';
+
+h1,
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $darkColor;
+
+    @media(max-width: 1200px) {
+        font-size: 1rem;
+    }
+}
+
+h3,
+h4,
+h5,
+h6 {
+    color: $darkGray;
+    font-weight: 500;
+}
+
+p,
+span,
+a {
+    color: $grayColor;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.green-text {
+    color: $accentColor !important;
+}
+
+.yellow-text {
+    color: $yellowColor !important;
+}
+
+.red-text {
+    color: $redColor !important;
+}
+
+.error-strong {
+    color: $redColor !important;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.mb-auto {
+    margin-bottom: auto !important;
+}
+
+.fancybox__backdrop {
+    background: #00000080 !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+@media(max-width:1200px) {
+    .toFill {
+        width: 100% !important;
+        justify-content: center;
+    }
+}
+
+.iconify {
+    pointer-events: none !important;
+    touch-action: none !important;
+    @include soft-transition;
+}
+
+.result-text {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 400;
+}

@@ -1,0 +1,134 @@
+.wrapper {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2000;
+
+    .background {
+        animation: fadeIn 0.4s ease-in-out 0s forwards;
+        background: #00000080;
+        backdrop-filter: blur(10px);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    & > div {
+        height: 100%;
+        width: 450px;
+        margin-left: auto;
+    }
+
+    .content {
+        background: #373737;
+        height: 100%;
+        padding: 48px 60px 90px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 450px;
+        z-index: 2001;
+
+        .actions {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+
+            .title {
+                color: #fff;
+                font-size: 1.75rem;
+                font-weight: 200;
+            }
+
+            .buttonClose {
+                :global(.iconify) {
+                    color: #fff;
+                    font-size: 1.5rem;
+                }
+
+                &:hover {
+                    :global(.iconify) {
+                        color: $accentColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .listContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 60px;
+        height: calc(100svh - 60px - 48px - 45px - 50px);
+        overflow: clip auto;
+
+        &::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #e2e2e2;
+            border-radius: 30px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $accentColor;
+            border-radius: 30px;
+        }
+
+        .listBlock {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            gap: 24px;
+
+            .listTitle {
+                color: #fff;
+                display: block;
+                font-size: 0.875rem;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                button {
+                    color: #fff;
+                    font-size: 1.125rem;
+                    font-weight: 400;
+                    @include soft-transition;
+                    @include cut-lines;
+
+                    &:hover,
+                    &.active {
+                        color: $accentColor;
+                    }
+
+                    &.active {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

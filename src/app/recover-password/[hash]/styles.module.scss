@@ -1,0 +1,29 @@
+.recoverPasswordForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    span {
+        margin-top: 10px;
+    }
+
+    .notMatch {
+        position: relative;
+
+        input {
+            border-color: $redColor !important;
+        }
+
+        &:after {
+            content: 'As senhas devem ser iguais';
+            position: absolute;
+            left: 0px;
+            bottom: -20px;
+            color: $redColor;
+        }
+    }
+
+    .actions {
+        margin-top: 40px;
+    }
+}

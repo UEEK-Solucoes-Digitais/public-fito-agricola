@@ -1,0 +1,1146 @@
+.addPropertyForm {
+    margin-top: 55px;
+
+    svg {
+        color: $darkGreenColor;
+        font-size: 2rem;
+        margin: 0px 50%;
+    }
+
+    .formGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        .expandedCol {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        @media (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .actions {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+.cropContainer {
+    width: 100%;
+}
+
+.boxHeader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    // justify-content: space-between;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $gray300;
+
+    &.costHeader {
+        justify-content: space-between;
+
+        .costInput {
+            display: flex;
+            // align-items: center;
+            gap: 10px;
+        }
+
+        .boxHeaderButtons {
+            margin-left: 0;
+        }
+    }
+
+    &.noBorder {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    &.noMargin {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+.cropsWrapper {
+    margin-top: 40px;
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .cropsInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        margin-top: 10px;
+
+        span {
+            font-size: 10px;
+            color: $blackColor;
+        }
+    }
+
+    .cropsList {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 12px;
+    }
+
+    @media (max-width: 1200px) {
+        // overflow-x: auto;// overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .cropsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+    }
+}
+
+:global(.toExport) {
+    .pressBoxHeader {
+        display: flex !important;
+        justify-content: space-between;
+    }
+}
+
+.fullMap {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    position: relative;
+
+    .cropHectare {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        z-index: 3;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .colorLegend {
+        position: absolute;
+        left: 10px;
+        bottom: 35px;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .legendItem {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            .legendColor {
+                width: 15px;
+                height: 15px;
+            }
+
+            .legendLabel {
+                color: #fff;
+            }
+        }
+    }
+
+    &.fullScreen {
+        border-radius: 0;
+        height: calc(100dvh - 200px);
+    }
+
+    @media (max-width: 1200px) {
+        &.fullScreen {
+            height: calc(100dvh - 140px);
+        }
+    }
+}
+
+.pressBoxHeader {
+    display: none;
+
+    p {
+        color: $blackColor;
+        font-size: 1rem;
+        text-align: right;
+    }
+}
+
+.defaultBorderContentBox {
+    border-radius: 20px;
+    border: 1px solid #dee2e6;
+    background: #fff;
+    box-shadow: 0px 0px 80px 0px rgba(0, 0, 0, 0.06);
+    padding: 20px 30px;
+    position: relative;
+    overflow: hidden;
+
+    .anchor {
+        position: absolute;
+        top: -230px;
+    }
+
+    &.smaller {
+        @media (min-width: 1500px) {
+            width: 70%;
+        }
+    }
+
+    &.forExport {
+        padding: 15px;
+
+        .chartMetrics {
+            margin-top: 10px;
+            gap: 15px 30px;
+
+            h3 {
+                font-size: 28px;
+            }
+        }
+
+        .chartWithInfo {
+            grid-template-columns: 30% auto;
+            gap: 20px;
+
+            .chartWrap {
+                padding-right: 20px;
+            }
+
+            .chartInfo {
+                gap: 20px 40px;
+
+                .chartInfoItem {
+                    .legentStyle {
+                        font-size: 32px;
+                    }
+
+                    .colorWrapper {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    & + .defaultBorderContentBox {
+        margin-top: 30px;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 20px;
+
+        &:not(.forExport) .chartWithInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 15px;
+
+            .chartWrap {
+                border-right: none;
+                border-bottom: 1px solid $gray300;
+            }
+
+            .chartInfo {
+                gap: 20px;
+
+                .chartInfoItem {
+                    .legentStyle {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    // @media (max-width: 1200px) {
+    //     box-shadow: none;
+    //     padding: 10px;
+    //     border-radius: 10px;
+
+    //     &.noStyleMobile {
+    //         border: none;
+    //         box-shadow: none;
+    //         padding: 0;
+    //         border-radius: 0;
+    //     }
+    // }
+}
+
+.managementDataHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+
+    & > p {
+        font-size: 18px;
+        margin-bottom: 0;
+        color: $blackColor;
+    }
+
+    &.mobile {
+        display: none;
+    }
+
+    @media (max-width: 1200px) {
+        &.mobile {
+            display: flex;
+        }
+
+        &.desktop {
+            display: none;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+.defaultTopBox {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &.mobile {
+        display: none;
+    }
+
+    .title {
+        color: $blackColor;
+        font-size: 1.125rem;
+        font-weight: 400;
+        @include cut-lines;
+    }
+
+    @media (max-width: 1200px) {
+        &.mobile {
+            display: flex;
+        }
+
+        &.desktop {
+            display: none;
+        }
+
+        .title {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .title {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.defaultBodyBox {
+    margin-top: 35px;
+    width: 100%;
+}
+
+.defaultBottomBox {
+    // border-top: 1px solid $lightGrayColor;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.contentWrap {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.titleFlex {
+    display: flex;
+    align-items: center;
+    color: $blackColor;
+    font-size: 18px;
+    gap: 10px;
+    margin: 40px 0;
+
+    svg {
+        color: $accentColor;
+        font-size: 24px;
+    }
+}
+
+.monitoringGroup {
+    margin-bottom: 50px;
+    margin-top: 40px;
+
+    & + .monitoringGroup {
+        margin-top: 0;
+    }
+}
+
+.infoModalWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    min-width: 800px;
+    min-height: 215px;
+
+    svg {
+        color: $darkGreenColor;
+        font-size: 2rem;
+    }
+
+    .infoGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        justify-content: space-between;
+        gap: 30px;
+
+        .gridItem {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            h4 {
+                color: $darkColor;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            span {
+                color: $grayColor;
+                font-weight: 400;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        min-width: 100%;
+
+        .infoGrid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
+
+.monitoringGroupItem {
+    margin-top: -15px;
+
+    .titleFlex {
+        font-size: 18px;
+        margin-bottom: 25px;
+
+        svg {
+            font-size: 22px;
+        }
+    }
+
+    .monitoringGroupItemInfos {
+        display: flex;
+        align-items: flex-start;
+        gap: 100px;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            p {
+                color: $darkColor;
+                font-size: 1rem;
+                margin-bottom: 0;
+
+                &:first-child {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.modalActions {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dashedDivider {
+    border-bottom: 1px dashed #c7ccd1;
+    width: 100%;
+    margin: 30px 0 45px;
+}
+
+.monitoringImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .monitoringImage {
+        border-radius: 15px;
+        cursor: pointer;
+        display: block;
+        height: 110px;
+        overflow: hidden;
+        width: 110px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            filter: brightness(0.8);
+        }
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.biggerFont {
+    font-size: 1.5rem;
+}
+
+.formMonitorModal {
+    .group {
+        margin-top: 20px;
+    }
+
+    .tabSwiper {
+        margin-top: 30px;
+    }
+
+    .content {
+        // min-height: 500px;
+        position: relative;
+        width: 820px;
+    }
+
+    @media (max-width: 1200px) {
+        .content {
+            width: 100%;
+        }
+    }
+}
+
+.chartWrap {
+    height: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #e2e2e2;
+        border-radius: 30px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $blackColor;
+        border-radius: 30px;
+    }
+
+    .canvaWrap {
+        min-width: 1200px;
+        height: 100%;
+    }
+
+    canvas {
+        width: 100% !important;
+    }
+}
+
+.chartWithInfo {
+    display: grid;
+    grid-template-columns: 40% auto;
+    gap: 30px;
+
+    .chartWrap {
+        border-right: 1px solid $gray300;
+    }
+
+    .chartInfo {
+        display: flex;
+        gap: 40px 100px;
+        flex-wrap: wrap;
+
+        .chartInfoItem {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .legentStyle {
+                color: #cfcfcf;
+                font-size: 44px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.colorWrapper {
+    display: flex;
+    color: $darkColor;
+    font-size: 1rem;
+    align-items: center;
+    gap: 10px;
+
+    span,
+    div {
+        border-radius: 999px;
+        width: 22px !important;
+        height: 22px;
+    }
+
+    @media (max-width: 1200px) {
+        font-size: 12px;
+
+        span {
+            width: 12px !important;
+            height: 12px;
+        }
+    }
+}
+
+.chartMetrics {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+
+    h3 {
+        color: $accentColor;
+        font-size: 48px;
+        font-weight: 700;
+    }
+
+    p {
+        color: $darkColor;
+        font-size: 16px;
+    }
+
+    @media (max-width: 1200px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 20px;
+        align-items: start;
+        margin-bottom: 15px;
+
+        h3 {
+            font-size: 23px;
+        }
+    }
+}
+
+.tableMargin {
+    margin: 30px 0;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #e2e2e2;
+        border-radius: 30px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $accentColor;
+        border-radius: 30px;
+    }
+
+    & > div {
+        padding-bottom: 0 !important;
+    }
+}
+
+.contentFlex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    & > div {
+        width: fit-content !important;
+    }
+
+    input {
+        width: 44px !important;
+    }
+}
+
+.mapToggleWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            margin: 0px;
+        }
+    }
+}
+
+.relativeModal {
+    position: relative;
+}
+
+.mapDialog {
+    opacity: 0;
+    z-index: -999;
+    height: 0px;
+    pointer-events: none;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    @include soft-transition;
+
+    &.showMapDialog {
+        opacity: 1;
+        height: 100%;
+        pointer-events: all;
+        z-index: auto;
+
+        @media (max-width: 1200px) {
+            height: 70%;
+        }
+    }
+
+    .dialogBody {
+        width: 90%;
+        height: 85%;
+        overflow: visible;
+        position: relative;
+
+        button {
+            z-index: 999;
+            position: absolute;
+            right: 0px;
+            top: -25px;
+        }
+    }
+}
+
+.boxHeaderButtons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+    }
+}
+
+.dateContent {
+    span {
+        display: inline-block;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    .list {
+        align-items: center;
+        display: flex;
+        margin-top: 10px;
+
+        p {
+            color: $darkColor;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 100%;
+
+            &:after {
+                color: $accentColor;
+                content: '•';
+                display: inline-block;
+                font-size: 0.875rem;
+                line-height: 100%;
+                margin: 0 10px;
+                transform: translate(-8px, -7px);
+            }
+        }
+    }
+
+    .dateField {
+        margin-top: 40px;
+        width: 50%;
+    }
+
+    button {
+        margin-top: 30px;
+    }
+}
+
+.propertyLinksGroup {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+
+    a {
+        color: $darkColor;
+        cursor: pointer;
+        font-size: 1rem;
+        position: relative;
+        text-decoration: underline;
+
+        &:not(:last-child) {
+            padding-right: 4px;
+
+            &:after {
+                content: ',';
+                position: absolute;
+                color: currentColor;
+                bottom: 0;
+                right: 0;
+                width: fit-content;
+            }
+        }
+    }
+}
+
+.cropName {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: $accentColor;
+
+    @media (max-width: 1200px) {
+        font-size: 1.1rem;
+    }
+
+    @media (max-width: 400px) {
+        font-size: 0.9rem;
+    }
+}
+
+.infoButton {
+    @media (max-width: 1200px) {
+        padding: 0 !important;
+        border: none !important;
+
+        span {
+            display: none;
+        }
+
+        svg {
+            color: #000 !important;
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+.mapContent {
+    width: 600px;
+    height: 500px;
+    margin-top: 30px;
+}
+
+.buttonActions {
+    display: flex;
+    gap: 10px;
+}
+
+.imagesObservation {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    a {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid $grayColor;
+        position: relative;
+
+        img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+        }
+    }
+}
+
+.markerLabel {
+    padding: 5px 10px;
+    // background: #444444;
+
+    &.transparent {
+        opacity: 0;
+    }
+}
+
+.tooltipGeneral {
+    position: absolute;
+    z-index: 9999999;
+    background: #444444;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.reportDetails {
+    display: flex;
+    gap: 20px 60px;
+    flex-wrap: wrap;
+
+    .reportDetailsItem {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            svg {
+                color: $accentColor;
+                font-size: 1.5rem;
+            }
+
+            p {
+                color: $darkColor;
+                font-size: 1.2rem;
+                font-weight: bold;
+                line-height: normal;
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        gap: 10px;
+
+        .reportDetailsItem {
+            .content {
+                svg {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.toggleTypeFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggleType {
+    display: flex;
+    gap: 5px;
+
+    button {
+        padding: 5px;
+        background: none;
+        border-radius: 10px;
+        border: 1px solid $darkGreenColor;
+        color: $darkGreenColor;
+        font-size: 14px;
+
+        &.active {
+            background: $darkGreenColor;
+            color: white;
+        }
+    }
+}
+
+.desktopButton {
+    @media (max-width: 1200px) {
+        display: none;
+    }
+}
+
+.mobileButton {
+    display: none;
+
+    @media (max-width: 1200px) {
+        display: flex;
+    }
+}
+
+.mobileInputs {
+    display: none;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+.exportButtons {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 1200px) {
+    .exportButtons {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+
+        button {
+            text-align: center;
+            justify-content: center;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.tabMobile {
+    display: none;
+
+    @media (max-width: 1200px) {
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tabSwiper {
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        padding-left: 20px;
+    }
+}
+
+.exportPage {
+    height: 100%;
+}
+
+.differentBox {
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fffbd0;
+    border: 1px solid $yellowColor;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+        font-size: 20px;
+        color: $yellowColor;
+    }
+
+    p {
+        font-size: 18px;
+        color: $yellowColor;
+    }
+}
+
+.totalAreaBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    * {
+        width: fit-content !important;
+    }
+}
+
+.differentBoxProperty {
+    position: relative;
+
+    &:hover {
+        .box {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    svg {
+        color: $yellowColor;
+    }
+
+    .box {
+        background: #fffbd0;
+        border: 1px solid $yellowColor;
+        position: absolute;
+        bottom: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px !important;
+        z-index: 999;
+        text-align: center;
+        pad: 5px;
+        opacity: 0;
+        visibility: hidden;
+        @include soft-transition;
+    }
+}
+
+.finishedHarvest {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}

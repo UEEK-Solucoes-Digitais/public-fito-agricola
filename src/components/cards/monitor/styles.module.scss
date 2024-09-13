@@ -1,0 +1,65 @@
+.card {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 50px 0px #0000001a;
+    height: 100%;
+    max-width: 330px;
+    overflow: hidden;
+    padding: 0 17px;
+
+    &+.card {
+        margin-top: 20px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        .row {
+            padding: 20px 0;
+            width: 100%;
+
+            &:nth-child(n + 2) {
+                border-top: 1px dashed $gray300;
+            }
+
+            .title {
+                color: $darkGray;
+                font-size: 16px;
+                font-weight: 500;
+                @include cut-lines;
+            }
+
+            p {
+                color: $darkColor;
+                font-size: .9375rem;
+                font-weight: 400;
+                line-height: 125%;
+                @include cut-lines;
+            }
+
+            button {
+                padding: 12px 16px;
+            }
+        }
+
+        .flexInline {
+            align-items: center;
+            display: flex;
+            gap: 12px;
+
+            &:nth-child(n + 2) {
+                margin-top: 17px;
+            }
+
+            .flexInline {
+                margin-top: 0;
+            }
+        }
+
+        :global(.iconify) {
+            color: $accentColor;
+            font-size: 26px;
+        }
+    }
+}

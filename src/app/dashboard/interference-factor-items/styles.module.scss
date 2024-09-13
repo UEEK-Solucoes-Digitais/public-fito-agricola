@@ -1,0 +1,144 @@
+.cultureSelectWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    text-overflow: ellipsis;
+    gap: 3px;
+    overflow: hidden;
+
+    button {
+        // font-size: 12px;
+    }
+
+    span {
+        display: block !important;
+        width: fit-content !important;
+    }
+}
+
+.toggleCulturesButton {
+    margin-left: 10px !important;
+}
+
+.culturesSelect {
+    position: relative;
+    margin-top: 30px;
+    width: fit-content;
+
+    .selected {
+        color: $accentColor;
+        font-size: 1rem;
+        font-weight: 600;
+        padding-right: 38px;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+            content: url('https://api.iconify.design/mdi/chevron-down.svg?color=%23152536&width=20');
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            @include soft-transition;
+        }
+
+        &.show {
+            &:after {
+                content: url('https://api.iconify.design/mdi/chevron-down.svg?color=%238abb6e&width=20');
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    .options {
+        max-height: 200px;
+        width: 200px;
+        position: absolute;
+        left: 83%;
+        top: 32px;
+        border-radius: 4px;
+        border: 1px solid #DEE2E6;
+        background: #FFF;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        pointer-events: none;
+        background: #FFF;
+        z-index: -1;
+        visibility: hidden;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.2));
+        overflow-x: hidden;
+        @include soft-transition;
+
+        &.show {
+            opacity: 1;
+            pointer-events: initial;
+            visibility: visible;
+            z-index: 10;
+        }
+
+        .option {
+            padding: 8px 18px;
+            padding-right: 38px;
+            color: $lightDarkColor;
+            font-size: 1rem;
+            background: #FFF;
+            cursor: pointer;
+            width: 100%;
+            min-height: 36px;
+            @include soft-transition;
+
+            &:hover {
+                background: darken(#FFF, 15%);
+            }
+
+            &.selected {
+                position: relative;
+                color: $blackColor;
+
+                &:after {
+                    content: url('https://api.iconify.design/ion/checkmark-sharp.svg?color=%238abb6e');
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+.selectedCulturesTitle {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.selectedCulturesContainer {
+    min-height: 200px;
+
+    .selectedCultures {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        gap: 8px;
+
+        .selectedItem {
+            background: $accentColor;
+            border-radius: 5px;
+            color: #FFF;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            @include soft-transition;
+
+            &:hover {
+                background: darken($accentColor, 20%);
+            }
+        }
+    }
+}

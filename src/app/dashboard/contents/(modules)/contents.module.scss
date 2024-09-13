@@ -1,0 +1,77 @@
+.contentWrapper {
+    margin-top: 35px;
+
+    .contentArea {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        width: 100%;
+    }
+}
+
+.contentActions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+
+
+.categoryList {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+
+
+    .categoryItem {
+        padding: 15px 5px;
+        border-top: 1px solid #ececec;
+        border-bottom: 1px solid #ececec;
+        display: flex;
+        gap: 10px;
+        cursor: pointer;
+        @include soft-transition;
+
+        &:hover {
+            background-color: #e7e7e7;
+            opacity: 1 !important;
+        }
+
+        svg {
+            color: $accentColor;
+            font-size: 22px;
+        }
+    }
+}
+
+.formCategory {
+    margin-top: 40px;
+
+    button {
+        margin-top: 30px;
+    }
+}
+
+.accessDisabled {
+    h2 {
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    p {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+}
+
+.categoryTitle {
+    align-items: center;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+
+    h1 {
+        color: #fff;
+    }
+}

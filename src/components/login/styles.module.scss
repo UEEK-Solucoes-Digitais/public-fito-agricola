@@ -1,0 +1,133 @@
+.defaultWrap {
+    position: relative;
+
+    .mobileText {
+        font-size: 0.875rem;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+
+        @media (max-width: 700px) {
+            display: block;
+        }
+    }
+}
+
+.formBox {
+    background: rgba(0, 0, 0, 0.7) !important;
+    box-shadow: none !important;
+    border-radius: 36px;
+    width: 540px;
+    min-height: 570px;
+    position: relative;
+    z-index: 10;
+
+    @media(min-width:1200px) {
+        &.formForgotPasswordBox {
+            padding: 65px 85px;
+        }
+    }
+
+    .infoWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 50px;
+
+        span {
+            color: $accentColor;
+            font-size: 1.125rem;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            color: #fff;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: #fff;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .buttonWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 75px;
+        }
+
+    }
+
+    .buttonWrapper {
+
+        .inlineButton {
+            color: #fff;
+        }
+
+        .fillButton {
+            background: #19D0BA;
+            color: #000;
+
+            &:hover {
+                background: lighten(#19D0BA, 10%);
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    @media(max-width: 1550px) {
+        min-height: unset;
+        padding: 25px;
+
+        .infoWrapper {
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 2.3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        form {
+
+            .buttonWrapper {
+                gap: 35px;
+            }
+
+            input {
+                padding: 12px 20px !important;
+            }
+        }
+
+        .buttonWrapper {
+            .fillButton {
+                padding: 12px 30px;
+            }
+        }
+    }
+
+    @media(max-width: 1200px) {
+        width: 100%;
+
+        .infoWrapper {
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    }
+}

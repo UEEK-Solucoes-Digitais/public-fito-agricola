@@ -1,0 +1,61 @@
+.timelineContainer {
+    .titleWrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        svg {
+            font-size: 24px;
+            color: $accentColor;
+        }
+    }
+
+    .timelineBody {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .timelineCategory {
+            span {
+                margin-bottom: 15px;
+                display: block;
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .timelineItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0px;
+        border-top: 1px solid #DEE2E6;
+        border-bottom: 1px solid #DEE2E6;
+        font-weight: normal;
+
+        span {
+            color: #8ABB6E;
+            font-weight: bold;
+        }
+
+        .timelineItemDate {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+}
+
+.loadginWrapper {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        font-size: 42px;
+        color: #000;
+    }
+}

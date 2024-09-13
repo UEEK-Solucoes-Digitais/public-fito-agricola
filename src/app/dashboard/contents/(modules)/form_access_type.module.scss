@@ -1,0 +1,23 @@
+.formSettings {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .actions {
+        display: flex;
+        gap: 15px;
+        width: 50%;
+
+        button {
+            width: 100%;
+            max-width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+.searchInput {
+    width: 400px;
+    margin: 20px 0 20px auto;
+}

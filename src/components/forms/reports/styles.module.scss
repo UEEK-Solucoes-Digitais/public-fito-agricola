@@ -1,0 +1,78 @@
+.filterOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    &.withHeight {
+        max-height: 250px;
+        overflow: auto;
+    }
+
+
+    .filterOptionItem {
+        background: $darkGreenColor;
+        display: flex;
+        gap: 5px;
+        font-size: 12px;
+        color: #fff;
+        padding: 10px 8px;
+        border-radius: 20px;
+
+        button {
+            cursor: pointer;
+        }
+    }
+}
+
+.highlightFilter {
+    padding: 10px 15px;
+    border: 1px solid #8abb6e;
+    background: #d2ffb81f;
+    border-radius: 15px;
+    margin-top: -10px;
+}
+
+.filterGroupGap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filterGroup {
+    max-width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    input {
+        max-width: 130px !important;
+    }
+
+    @media (max-width: 1200px) {
+        gap: 10px;
+        max-width: 100%;
+
+        input {
+            max-width: 100% !important;
+        }
+    }
+}
+
+.plantLabels {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    padding-top: 25px;
+
+    &:after {
+        content: "Período de plantio";
+        font-size: 1rem;
+        color: $blackColor;
+        font-weight: 500;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0;
+    }
+}

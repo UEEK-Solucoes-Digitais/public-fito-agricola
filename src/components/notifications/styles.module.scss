@@ -1,0 +1,133 @@
+// :global(.notification__container) {
+//     align-items: center;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 15px;
+//     justify-content: center;
+//     left: 50%;
+//     position: fixed;
+//     top: 50px;
+//     transform: translateX(-50%);
+//     z-index: 1027;
+// }
+
+.toastWrapper {
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    color: #FFF;
+    font-size: 0.875rem;
+    font-weight: bold;
+    gap: 10px;
+    min-height: 47px;
+    min-width: 200px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 10px 30px;
+    position: fixed;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: -1;
+
+    @include soft-transition;
+
+    .iconWrapper {
+        padding-right: 10px;
+        border-right: 1px solid #FFF;
+
+        svg {
+            font-size: 1.6rem;
+        }
+    }
+
+    // &.animating {
+    //     animation: fade-in-out 4000ms;
+
+    //     @keyframes fade-in-out {
+    //         0% {
+    //             opacity: 1;
+    //             visibility: visible;
+    //             z-index: 1200;
+    //         }
+
+    //         90% {
+    //             opacity: 1;
+    //         }
+
+    //         100% {
+    //             opacity: 0;
+    //             visibility: hidden;
+    //             z-index: -1;
+    //         }
+    //     }
+    // }
+
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1200; // Ou qualquer outro valor adequado para z-index
+    }
+
+    // States
+    &.success {
+        background: rgba(41, 94, 36, 0.8);
+    }
+
+    &.warning {
+        background: rgba(143, 132, 30, 0.8);
+    }
+
+    &.danger {
+        background: rgba(168, 23, 13, 0.8);
+    }
+
+    &.info,
+    &.loading {
+        background: rgba(27, 46, 151, 0.8);
+    }
+
+    &.loading {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1200;
+    }
+
+    // Positions
+    &.bottom {
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.top {
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.topLeft {
+        top: 100px;
+        left: 100px;
+    }
+
+    &.topRight {
+        top: 100px;
+        right: 100px;
+    }
+
+    &.bottomLeft {
+        bottom: 100px;
+        left: 100px;
+    }
+
+    &.bottomRight {
+        bottom: 100px;
+        right: 100px;
+    }
+
+    @media (max-width: 1200px) {
+        justify-content: center;
+        min-width: 90%;
+    }
+}

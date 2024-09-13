@@ -1,0 +1,112 @@
+.dashboardWrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .column {
+        height: 100%;
+        max-height: calc(100dvh - 195px);
+        overflow: auto;
+        padding-bottom: 40px;
+        width: 100%;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #e2e2e2;
+            border-radius: 30px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $accentColor;
+            border-radius: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            height: auto;
+            overflow: inherit;
+            max-height: unset;
+        }
+
+        // &:not(:last-child) {
+        //     padding-right: 35px;
+        // }
+
+        // &:first-child {
+        //     width: 75%;
+        // }
+
+        // &:last-child {
+        //     border-left: 1px solid $gray300;
+        //     padding-left: 35px;
+        //     width: 25%;
+        // }
+    }
+
+    .row {
+        width: 100%;
+
+        &:first-child {
+            padding-bottom: 40px;
+        }
+
+        &:nth-child(n + 2) {
+            border-top: 1px solid $gray300;
+            padding: 40px 0;
+        }
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px 20px;
+        width: 100%;
+
+        @media (max-width: 1200px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    }
+
+    .period {
+        width: 100%;
+
+        h6 {
+            color: $grayColor;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        &:nth-child(n + 3) {
+            border-top: 1px solid $gray300;
+
+            h6 {
+                margin-top: 2rem;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.dashboardPadding {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.dashboardPaddingLeft {
+    padding-left: 30px;
+}
+
+@media (max-width: 1200px) {
+    .dashboardPadding,
+    .dashboardPaddingLeft {
+        padding: 0;
+    }
+}

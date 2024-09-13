@@ -1,0 +1,40 @@
+{
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "plugin:react/jsx-runtime",
+        "@rocketseat/eslint-config/react",
+        "eslint:recommended"
+    ],
+    "plugins": [
+        "react-hooks"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "semi": false,
+                "singleQuote": true,
+                "printWidth": 120,
+                "tabWidth": 4,
+                "useTabs": false,
+                "trailingComma": "all",
+                "arrowParens": "always",
+                "quoteProps": "as-needed",
+                "jsxSingleQuote": true,
+                "bracketSpacing": true,
+                "bracketSameLine": true,
+                "endOfLine": "auto"
+            }
+        ],
+        "react/no-array-index-key": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "react/no-unescaped-entities": "warn",
+        "react-hooks/exhaustive-deps": "warn",
+        "no-debugger": "warn",
+        "eqeqeq": "off",
+        "no-eq-null": "off"
+    }
+}
